@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-500: oklch(0.55 0.22 250);
+  --color-primary-600: oklch(0.50 0.22 250);
+  --color-background: white;
+  --color-foreground: oklch(0.15 0 0);
+  --color-card: white;
+  --color-card-foreground: oklch(0.15 0 0);
+  --color-border: oklch(0.90 0 0);
+  --color-input: oklch(0.90 0 0);
+  --color-ring: oklch(0.55 0.22 250);
+  --color-muted: oklch(0.96 0 0);
+  --color-muted-foreground: oklch(0.45 0 0);
+  --color-accent: oklch(0.96 0 0);
+  --color-accent-foreground: oklch(0.15 0 0);
+  --color-destructive: oklch(0.55 0.22 25);
+  --color-destructive-foreground: white;
+  --font-body: "Inter", "system-ui", "sans-serif";
+  --breakpoint-3xl: 1920px;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: oklch(0.15 0 0);
+    --color-foreground: white;
+    --color-card: oklch(0.15 0 0);
+    --color-card-foreground: white;
+    --color-border: oklch(0.25 0 0);
+    --color-input: oklch(0.25 0 0);
+    --color-muted: oklch(0.25 0 0);
+    --color-muted-foreground: oklch(0.65 0 0);
+    --color-accent: oklch(0.25 0 0);
+    --color-accent-foreground: white;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[--color-border];
+  }
+
+  body {
+    @apply bg-[--color-background] text-[--color-foreground] font-[--font-body];
+  }
+}
+
+@utility center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility stack {
+  display: flex;
+  flex-direction: column;
+}
